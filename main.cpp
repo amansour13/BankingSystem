@@ -16,9 +16,11 @@ class BankAccount
         string accountID;
         double balance;
         Client ptrClient;
+        // I don't really understand the association well so things are quite missy here.
     public:
         bool vld = false;
         BankAccount();
+        BankAccount(double bal);
         double deposit(double balance);
         double withdraw(double balance);
         void getBankAccountInfo();
@@ -30,6 +32,15 @@ BankAccount::BankAccount()
     //here we will make the random ID and then we return that this was a valid or not cause in the bankapplication both the client and the 
     // bank account has to be valid.
     // but at the same time here we need to check if it was saving cause if saving we'll do the minimum condition.
+    //Here as  I can see we should ask for the random id when he decide whether it's a saving account or a basic.
+    balance = 0;
+    
+    
+}
+BankAccount::BankAccount(double bal)
+{
+    balance = bal;
+    static int ID;
 }
 void BankAccount::getBankAccountInfo()
 {
@@ -86,14 +97,25 @@ void Client::getClientInfo()
     std::cout << "Address: " << address <<"     Phone: " << phone << std::endl;
 }
 
-class SavingsBankAccount:BankAccount
+class SavingsBankAccount:public BankAccount 
 {
     private:
-        double minimumBalance;
+        double minimumBalance = 1000;
     public:
-        SavingsBankAccount();
+        SavingsBankAccount(double );
 
 };
+
+SavingsBankAccount::SavingsBankAccount(double bal)
+{
+        if(bal < 1000)
+            std::cout << "The minimum about to open the account is 1000\n";
+        else
+        {
+            minimumBalance = bal;
+            vld = true;
+        }
+}
 
 class BankApplication
 {
@@ -109,11 +131,42 @@ class BankApplication
 bool BankApplication::add_new_account()
 {
     Client client = Client(); // else if I say client() I can't access anything.
-    bool valid = client.vld;
-
-    if(!valid)
+    bool valid1 = client.vld;
+    if(!valid1)
         return false;
-    //cause if something is wrong with the input of client then we won't make a new one and we'll do the same for the bank account.
+    for(; ; )
+    {
+        std::string choice = "";
+        std::cout << "Enter 1 to create a basic account and 2 to saving-type accound ==>";
+        std::cin >> choice;
+        if(choice == "1")
+        {
+            double balance =0;
+            BankAccount BBA;
+            std::cout << "Enter the balance ==>";   std::cin >> balance;
+            
+            if(balance >= 0)
+                BBA = BankAccount(balance);
+            else 
+            {
+                BBA = BankAccount();
+            }
+                
+            valid1 = BBA.vld;
+            break;
+        }
+        else if (choice == "2")
+        {
+            double balance;
+            std::cout << "Enter the balance ==>"; std::cin >> balance;
+            SavingsBankAccount SBA(balance);
+            valid1 = SBA.vld;
+            break;
+        }
+
+        return valid1;
+    
+    }
     BankAccount bankAcc();
 }
 void BankApplication::printList()
@@ -153,13 +206,13 @@ BankApplication::BankApplication()
         cin >> choice;
 
         if(choice == "1")
-            createNew();
+            add_new_account();
         else if(choice == "2")
             printList();
-        else if(choice == "3")
-            withdrawMoney();
-        else if(choice == "4")
-            depositMoney();=
+        // else if(choice == "3")
+        //     withdrawMoney();
+        // else if(choice == "4")
+        //     depositMoney();=
         else if(choice == "0")
             break;
         else
