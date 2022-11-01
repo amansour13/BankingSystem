@@ -5,15 +5,15 @@
 #include <string>
 class Client
 {
-
-    private:
-        string name;
-        string address;
-        string phone;
-        BankAccount * ptrAccount;
-    public:
-        Client();
-        virtual ~Client();
+    std::string name;
+    std::string address; 
+    std::string phone;
+    
+public:
+    BankAccount* ptrBankAccount;
+    bool vld = false;
+    Client();
+    void getClientInfo();
 
 };
 

@@ -6,16 +6,19 @@
 
 class BankAccount
 {
-    private:
-        string accountID;
-        double balance;
-    public:
-        BankAccount();
-        double deposit(double balance);
-        double withdraw(double balance);
-        virtual ~BankAccount();
+    std::string accountID;
+    double balance;
+public:
+        
+    Client* prtClient;
+    bool vld = false;
 
-
+    BankAccount();
+    BankAccount(double);
+    virtual void deposit(double balance);
+    virtual void withdraw(double balance);
+    void set();
+    void getBankAccountInfo();
 };
 
 #endif // BANKACCOUNT_H

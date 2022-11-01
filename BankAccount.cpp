@@ -2,10 +2,32 @@
 
 BankAccount::BankAccount()
 {
-    //ctor
+    balance = 0;   
 }
 
-BankAccount::~BankAccount()
+BankAccount::BankAccount(double bal)
 {
-    //dtor
+    balance = bal;   
+}
+
+ void BankAccount::deposit(double x)
+{
+    balance +=x;
+}
+
+void BankAccount::withdraw(double x)
+{
+    if(balance <= x)
+        balance -= x;
+    else
+    {
+        std::cout << "You are balance isn't sufficient \n";
+        return;
+    }
+}
+
+void BankAccount::getBankAccountInfo()
+{
+    std::cout << "Account ID: " << accountID << std::endl;
+    std::cout << "Balance: "    << balance   << std::endl;
 }

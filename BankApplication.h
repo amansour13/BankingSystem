@@ -3,18 +3,19 @@
 #include <iostream>
 #include <string>
 #include <map>
+#include "BankAccount.h"
+#include "SavingsBankAccount.h"
+#include "Client.h"
 
 class BankApplication
 {
-
-    private:
-       map<BankAccount, Client> listOfClients;
-    public:
-        BankApplication();
-        bool add_new_account();
-        virtual ~BankApplication();
-
-
+       
+public:
+    std::map<Client, BankAccount> listOfClients;
+    BankApplication();
+    bool add_new_account();
+    void printList();
+    void semiAssociation();
 };
 
 
