@@ -23,6 +23,7 @@ Client::Client()
     phone = phone;
 }
 
+
 //BankAccount Client::getPointer()
 //{
 //    return this->bankAccount;

@@ -4,8 +4,9 @@
 class SavingsBankAccount :public BankAccount
 {
 private:
-    double minimumBalance = 1000;
+    double const minimumBalance = 1000;
 public:
-    SavingsBankAccount(double);
-
+    SavingsBankAccount(double bal);
+    double withdraw(double bal);
+    double debosit(double mount);
 };

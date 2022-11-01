@@ -11,11 +11,55 @@ BankAccount::BankAccount()
 }
 BankAccount::BankAccount(double bal)
 {
+    
     balance = bal;
-    static int ID = 0;
+    //static int ID = 0;                      //---------------------------->>>>>>>>>>>>> dont care now
 }
-void BankAccount::getBankAccountInfo()
+
+
+void BankAccount::set_accountID(string id) {              //**********************************************************  new update
+    this->accountID = id;
+}                                                         
+
+string BankAccount::get_accountID() {
+    return accountID;                                      //**********************************************************  new update
+}
+
+void BankAccount::set_balance(double bal) {                 //**********************************************************  new update    
+    this->balance = bal;
+}
+
+double BankAccount::get_balance() {                        //**********************************************************  new update
+    return balance;
+}
+
+//void BankAccount::getBankAccountInfo()
+//{
+//    std::cout << "Account ID: " << accountID << std::endl;          //**********************************************************  dont care
+//    std::cout << "Balance: " << balance << std::endl;
+//}
+
+
+double BankAccount::deposit(double bal)
 {
-    std::cout << "Account ID: " << accountID << std::endl;
-    std::cout << "Balance: " << balance << std::endl;
+    balance += bal;
+    cout << "Successfully *_*" << endl;
+    return balance;
 }
+
+double BankAccount::withdraw(double bal)
+{
+    if (bal <= balance) {
+        balance -= bal;
+        cout << "Thank you *_*" << endl;
+        return balance;
+   }
+    else {
+        cout << "Sorry. This is more than what you can withdraw D:" << endl;
+        return 0.0;
+    }
+
+}
+
+
+

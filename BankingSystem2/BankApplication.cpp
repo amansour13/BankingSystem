@@ -21,10 +21,10 @@ BankApplication::BankApplication()
             add_new_account();
         else if (choice == "2")
             printList();
-        // else if(choice == "3")
-        //     withdrawMoney();
-        // else if(choice == "4")
-        //     depositMoney();=
+         else if(choice == "3")
+             withdrawMoney();
+         else if(choice == "4")
+             depositMoney();=
         else if (choice == "0")
             break;
         else
