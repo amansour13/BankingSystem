@@ -1,0 +1,87 @@
+# depslib dependency file v1.0
+1668086895 source:d:\ahmed\new folder\bankaccount.cpp
+	"../New folder/BankAccount.h"
+
+1668088953 d:\ahmed\new folder\bankaccount.h
+	<iostream>
+	<string>
+
+1668088554 d:\ahmed\new folder\client.h
+	<iostream>
+	<string>
+
+1668088554 source:d:\ahmed\new folder\client.cpp
+	<iostream>
+	<regex>
+	"../New folder/Client.h"
+
+1668088554 source:d:\ahmed\new folder\savingbankaccount.cpp
+	"../New folder/SavingBankAccount.h"
+
+1668088554 d:\ahmed\new folder\savingbankaccount.h
+	<iostream>
+	<string>
+	"../New folder/BankAccount.h"
+
+1668088554 source:d:\ahmed\banksystem\main.cpp
+	<iostream>
+	<string>
+	<map>
+	<regex>
+	"../New folder/BankApplication.h"
+
+1668088554 d:\ahmed\new folder\bankapplication.h
+	<iostream>
+	<vector>
+	<utility>
+	<string>
+	"../New folder/BankAccount.h"
+	"../New folder/SavingBankAccount.h"
+	"../New folder/Client.h"
+
+1668088554 source:d:\ahmed\new folder\bankapplication.cpp
+	"../New folder/BankApplication.h"
+
+1668089382 source:d:\ahmed\git\bankingsystem\new folder\bankaccount.cpp
+	"../New folder/BankAccount.h"
+
+1668088953 d:\ahmed\git\bankingsystem\new folder\bankaccount.h
+	<iostream>
+	<string>
+
+1668088554 source:d:\ahmed\git\bankingsystem\new folder\bankapplication.cpp
+	"../New folder/BankApplication.h"
+
+1668088554 d:\ahmed\git\bankingsystem\new folder\bankapplication.h
+	<iostream>
+	<vector>
+	<utility>
+	<string>
+	"../New folder/BankAccount.h"
+	"../New folder/SavingBankAccount.h"
+	"../New folder/Client.h"
+
+1668088554 d:\ahmed\git\bankingsystem\new folder\savingbankaccount.h
+	<iostream>
+	<string>
+	"../New folder/BankAccount.h"
+
+1668088554 d:\ahmed\git\bankingsystem\new folder\client.h
+	<iostream>
+	<string>
+
+1668088554 source:d:\ahmed\git\bankingsystem\new folder\client.cpp
+	<iostream>
+	<regex>
+	"../New folder/Client.h"
+
+1668088554 source:d:\ahmed\git\bankingsystem\new folder\savingbankaccount.cpp
+	"../New folder/SavingBankAccount.h"
+
+1668088554 source:d:\ahmed\git\bankingsystem\banksystem\main.cpp
+	<iostream>
+	<string>
+	<map>
+	<regex>
+	"../New folder/BankApplication.h"
+
