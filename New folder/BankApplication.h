@@ -11,7 +11,8 @@
 class BankApplication
 {
 private:
-    vector<pair<Client, BankAccount>> listOfClients;
+    vector<pair<Client, BankAccount>> listOfClientsBA;
+    vector<pair<Client, SavingBankAccount>> listOfClientsSBA;
 public:
     BankApplication();
     bool add_new_account();

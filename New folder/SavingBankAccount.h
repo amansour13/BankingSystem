@@ -9,9 +9,9 @@ using namespace std;
 class SavingBankAccount : public BankAccount
 {
 private:
-    double minimumBalance = 1000.0;
+    double minimumBalance;
 public:
-    SavingBankAccount(double x);
+    SavingBankAccount(double x, double minBal = 1000);
     void deposit(double x);
     void withdraw(double x);
 };

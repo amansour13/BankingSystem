@@ -8,7 +8,6 @@ BankAccount::BankAccount()
 {
     accountID = "FCAI-" + to_string(IDctr);
     balance = 0;
-    std::cout << "An account was created with ID " << accountID << " and Starting Balance " << balance << " L.E. (\"0\" if it is Saving account)";
 }
 
 BankAccount::BankAccount(double bal)
